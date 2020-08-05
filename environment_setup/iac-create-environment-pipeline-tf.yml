@@ -22,9 +22,9 @@ variables:
 
 steps:
 - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
-  displayName: 'Use Terraform 0.12.24'
+  displayName: 'Use Terraform 0.12.29'
   inputs:
-    terraformVersion: 0.12.24
+    terraformVersion: 0.12.29
 
 - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
   displayName: 'TF init - Deploy MLOps resources to Azure'
