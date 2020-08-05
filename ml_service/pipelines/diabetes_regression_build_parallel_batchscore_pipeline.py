@@ -382,12 +382,10 @@ def build_batchscore_pipeline():
         cli_auth = AzureCliAuthentication()
 
         # Get Azure machine learning workspace
-        aml_workspace = Workspace(
-            subscription_id=env.subscription_id,
-            resource_group=env.resource_group,
-            workspace_name=env.workspace_name,
-            auth=cli_auth
-        )
+        aml_workspace = Workspace(subscription_id=env.subscription_id,
+                    resource_group=env.resource_group,
+                    workspace_name=env.workspace_name,
+                    auth=cli_auth)
         """
         # Get Azure machine learning workspace
         aml_workspace = Workspace.get(
