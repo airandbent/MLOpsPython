@@ -37,7 +37,6 @@ from azureml.core import (
 )
 from azureml.pipeline.core import Pipeline, PipelineData, PipelineParameter
 from azureml.core.compute import ComputeTarget
-from azureml.core.authentication import AzureCliAuthentication
 from azureml.data.datapath import DataPath
 from azureml.pipeline.steps import PythonScriptStep
 from typing import Tuple
@@ -379,21 +378,13 @@ def build_batchscore_pipeline():
     try:
         env = Env()
 
-        cli_auth = AzureCliAuthentication()
-
-        # Get Azure machine learning workspace
-        aml_workspace = Workspace(subscription_id=env.subscription_id,
-                    resource_group=env.resource_group,
-                    workspace_name=env.workspace_name,
-                    auth=cli_auth)
-        """
         # Get Azure machine learning workspace
         aml_workspace = Workspace.get(
             name=env.workspace_name,
             subscription_id=env.subscription_id,
             resource_group=env.resource_group,
         )
-        """
+
         # Get Azure machine learning cluster
         aml_compute_score = get_compute(
             aml_workspace,
