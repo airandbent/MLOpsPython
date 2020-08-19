@@ -82,6 +82,7 @@ def get_or_create_datastore(
             datastore_name=datastorename,
             account_name=env.scoring_datastore_storage_name,
             account_key=env.scoring_datastore_access_key,
+            sas_token=env.scoring_datastore_sas_token,
             container_name=containername,
         )
     else:
@@ -360,6 +361,8 @@ def get_scoring_pipeline(
             "--scoring_datastore_key",
             env.scoring_datastore_access_key
             if env.scoring_datastore_access_key is not None
+            else "",
+            if env.scoring_datastore_sas_token is not None
             else "",
         ],
         inputs=[output_loc],

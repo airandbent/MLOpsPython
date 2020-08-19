@@ -68,6 +68,7 @@ stages:
           python -m ml_service.pipelines.diabetes_regression_build_parallel_batchscore_pipeline
       env:
         SCORING_DATASTORE_ACCESS_KEY: $(SCORING_DATASTORE_ACCESS_KEY)
+        SCORING_DATASTORE_SAS_TOKEN: $(SCORING_DATASTORE_SAS_TOKEN)
 
   - job: "Run_Batch_Score_Pipeline"
     displayName: "Run Batch Scoring Pipeline"

@@ -94,6 +94,9 @@ class Env:
     scoring_datastore_access_key: Optional[str] = os.environ.get(
         "SCORING_DATASTORE_ACCESS_KEY"
     )
+    scoring_datastore_sas_token: Optional[str] = os.environ.get(
+        "SCORING_DATASTORE_SAS_TOKEN"
+    )
     scoring_datastore_input_container: Optional[str] = os.environ.get(
         "SCORING_DATASTORE_INPUT_CONTAINER"
     )
