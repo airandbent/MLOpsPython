@@ -67,14 +67,6 @@ def get_or_create_datastore(
         else env.scoring_datastore_output_container
     )
 
-    if env.scoring_datastore_access_key is None:
-        raise ValueError("scoring datastore access is required.")
-    else:
-        print(env.scoring_datastore_access_key)
-        print(env.scoring_datastore_storage_name)
-        print(datastorename)
-        print(containername)
-
     if datastorename in ws.datastores:
 
         datastore = ws.datastores[datastorename]
