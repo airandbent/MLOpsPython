@@ -61,6 +61,14 @@ def get_or_create_datastore(
     if datastorename is None:
         raise ValueError("Datastore name is required.")
 
+    if env.scoring_datastore_access_key is None:
+        raise ValueError("scoring datastore access is required.")
+    else:
+        print(env.scoring_datastore_access_key)
+        print(env.scoring_datastore_storage_name)
+        print(datastorename)
+        print(containername)
+
     containername = (
         env.scoring_datastore_input_container
         if input
