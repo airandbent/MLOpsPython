@@ -81,6 +81,7 @@ def get_or_create_datastore(
             workspace=ws,
             datastore_name=datastorename,
             account_name=env.scoring_datastore_storage_name,
+            sas_token=env.scoring_datastore_sas_token,
             container_name=containername,
         )
     else:
