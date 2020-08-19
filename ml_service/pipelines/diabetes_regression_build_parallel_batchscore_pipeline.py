@@ -361,7 +361,7 @@ def get_scoring_pipeline(
             "--scoring_datastore_key",
             env.scoring_datastore_access_key
             if env.scoring_datastore_access_key is not None
-            else "",  
+            else "",
         ],
         inputs=[output_loc],
         allow_reuse=False,
